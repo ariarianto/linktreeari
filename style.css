@@ -1,0 +1,261 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-image: url("img/jpg.1.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.container {
+  background: #ffffff;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #000000;
+}
+
+.profile-text h1 {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.profile-text p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Links */
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #090083;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.links a:hover {
+  background: #1100fc;
+  transform: scale(1.02);
+}
+
+.links a:hover {
+  background: #3729ff;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.links a i {
+  margin-right: 10px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.about-me {
+  margin-top: 30px;
+  background: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center; /* Tambahkan ini */
+}
+
+.about-me h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.about-me p {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto; /* Membuat paragraf tetap rapi di tengah */
+}
+
+.gallery-scroll {
+  overflow: hidden;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 10px;
+  animation: scrollLeft 20s linear infinite;
+}
+
+.scroll-track img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Animasi geser ke kiri */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Galeri Scroll Manual */
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.gallery-scroll img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* Popup Fullscreen */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  width: 400px; /* GANTI sesuai ukuran yang kamu mau */
+  height: 400px; /* GANTI sesuai ukuran yang kamu mau */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Untuk Internet Explorer */
+  scrollbar-width: none; /* Untuk Firefox */
+}
+
+/* Sembunyikan scrollbar di Webkit browser (Chrome, Safari) */
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
